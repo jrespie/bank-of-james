@@ -1,0 +1,14 @@
+<p>mortgage-calculator works!</p>
+<form>
+    <label>Num1:
+        <input type="number" [(ngModel)]="num1" placeholder="1" name="num1">
+    </label><br/>
+    <label>Num2:
+        <input type="number" [(ngModel)]="num2" placeholder="2" name="num2">
+    </label><br />
+    
+    <input type="submit" value="Calculate" (click)="calculateResult()">
+    <div>
+        <span>{{result}}</span>
+    </div>
+</form>
