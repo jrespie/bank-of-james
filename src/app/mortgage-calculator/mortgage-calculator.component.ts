@@ -9,8 +9,8 @@ export class MortgageCalculatorComponent implements OnInit {
 
   constructor() { }
 
-  @Input() num1: number //= 3;
-  @Input() num2: number //= 4;
+  @Input() num1: number;
+  @Input() num2: number;
   result: number;
 
   ngOnInit(): void {
