@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MortgageCalculatorComponent implements OnInit {
 
-  private constructor() { }
+  public constructor() { }
 
   @Input() public num1: number = 0;
   @Input() public num2: number = 0;
