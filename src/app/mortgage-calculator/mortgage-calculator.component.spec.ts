@@ -22,4 +22,11 @@ describe('MortgageCalculatorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should add two numbers together', () => {
+    component.num1=2;
+    component.num2=3;
+    component.calculateResult();
+    expect(component.result).toEqual(5);
+  })
 });
