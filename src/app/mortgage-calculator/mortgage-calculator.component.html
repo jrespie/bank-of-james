@@ -1,5 +1,5 @@
 <p>mortgage-calculator works!</p>
-<form>
+<form (ngSubmit)="calculateResult()">
     <label>Num1:
         <input type="number" [(ngModel)]="num1" placeholder="1" name="num1" autocomplete="off">
     </label><br/>
@@ -7,7 +7,7 @@
         <input type="number" [(ngModel)]="num2" placeholder="2" name="num2" autocomplete="off">
     </label><br />
     
-    <input type="submit" value="Calculate" (ngSubmit)="calculateResult()">
+    <input type="submit" value="Calculate" >
     <div>
         <span>{{result}}</span>
     </div>
