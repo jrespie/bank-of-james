@@ -1,10 +1,16 @@
 <p>mortgage-calculator works!</p>
 <form (ngSubmit)="calculateResult()">
-    <label>Num1:
-        <input type="number" [(ngModel)]="num1" placeholder="1" name="num1" autocomplete="off">
+    <label>House price:
+        <input type="number" [(ngModel)]="housePrice" placeholder="780000" name="housePrice" autocomplete="off">
     </label><br/>
-    <label>Num2:
-        <input type="number" [(ngModel)]="num2" placeholder="2" name="num2" autocomplete="off">
+    <label>Deposit amount:
+        <input type="number" [(ngModel)]="deposit" placeholder="156000" name="deposit" autocomplete="off">
+    </label><br />
+    <label>Interest rate:
+        <input type="number" [(ngModel)]="interestRate" placeholder="4" name="interestRate" autocomplete="off"> <label>% per annum</label>
+    </label><br />
+    <label>Loan term:
+        <input type="number" [(ngModel)]="term" placeholder="25" name="term" autocomplete="off"> <label>years</label>
     </label><br />
     
     <input type="submit" value="Calculate" >
