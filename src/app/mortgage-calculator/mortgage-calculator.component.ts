@@ -13,6 +13,7 @@ export class MortgageCalculatorComponent implements OnInit {
   @Input() public deposit: number = 156000;
   @Input() public interestRate: number=4.00;
   @Input() public term: number=25;
+  public lowEquityMargin: number=0.75
   public result: string;
 
   public ngOnInit(): void {
@@ -23,8 +24,16 @@ export class MortgageCalculatorComponent implements OnInit {
     console.log(`Loan Amount: ${loanAmount}`)
     return loanAmount;
   }
+
   private calculateMonthlyInterestRate() {
-    const monthlyInterestRate = this.interestRate/100/12;
+    var monthlyInterestRate=0;
+    if(this.lowEquityMarginIsApplicable()) {
+      monthlyInterestRate = (this.interestRate+this.lowEquityMargin)/100/12;
+      console.log("Low Equity Margin applies");
+    }
+    else{
+      monthlyInterestRate = this.interestRate / 100 / 12;
+    }
     console.log(`Monthly Interest Rate: ${monthlyInterestRate}`)
     return monthlyInterestRate;
   }
@@ -32,6 +41,15 @@ export class MortgageCalculatorComponent implements OnInit {
     const monthsOfLoan = this.term*12;
     console.log(`Months of Loan: ${monthsOfLoan}`)
     return monthsOfLoan;
+  }
+
+  public lowEquityMarginIsApplicable(): boolean {
+    if (this.deposit / this.housePrice < 0.2) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
   public calculateResult(): void {
