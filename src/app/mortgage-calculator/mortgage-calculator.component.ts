@@ -11,9 +11,9 @@ export class MortgageCalculatorComponent implements OnInit {
 
   @Input() public housePrice: number = 780000;
   @Input() public deposit: number = 156000;
-  @Input() public interestRate: number=4;
+  @Input() public interestRate: number=4.00;
   @Input() public term: number=25;
-  public result: number;
+  public result: string;
 
   public ngOnInit(): void {
   }
@@ -41,7 +41,8 @@ export class MortgageCalculatorComponent implements OnInit {
     const i = this.calculateMonthlyInterestRate();
     const n = this.calculateMonthsOfLoan();
 
-    this.result =  P*(i*(Math.pow(1+i,n)))/(Math.pow((1+i),n)-1);
+    const rawResult = P*(i*(Math.pow(1+i,n)))/(Math.pow((1+i),n)-1);
+    this.result = rawResult.toFixed(2);
   }
 
 }
