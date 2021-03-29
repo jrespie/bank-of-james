@@ -1,14 +1,31 @@
-<p>mortgage-calculator works!</p>
-<form (ngSubmit)="calculateResult()">
-    <label>Num1:
-        <input type="number" [(ngModel)]="num1" placeholder="1" name="num1" autocomplete="off">
-    </label><br/>
-    <label>Num2:
-        <input type="number" [(ngModel)]="num2" placeholder="2" name="num2" autocomplete="off">
-    </label><br />
+<h1>Mortgage Calculator</h1>
+<form (ngSubmit)="calculateResult()" fxLayout="column" fxLayoutAlign="center center">
+    <mat-card fxFlex="50%" fxLayoutAlign="center center" fxLayout="column">
+    <mat-form-field style="text-align: left" fxFlexFill>
+        <mat-label>House price</mat-label>
+        <span matPrefix>$</span>
+        <input matInput type="number" [(ngModel)]="housePrice" placeholder="780000" name="housePrice" autocomplete="off" style="text-align: right">
+    </mat-form-field>
+    <br/>
+    <mat-form-field style="text-align: left" fxFlexFill>
+    <mat-label>Deposit amount</mat-label>
+    <span matPrefix>$</span>
+        <input matInput type="number" [(ngModel)]="deposit" placeholder="156000" name="deposit" autocomplete="off" style="text-align: right">
+    </mat-form-field>
+    <br />
+    <mat-form-field style="text-align: left" fxFlexFill>
+    <mat-label>Interest rate per annum</mat-label>
+        <input matInput type="number" [(ngModel)]="interestRate" placeholder="4.00" name="interestRate" autocomplete="off" style="text-align: right" > <span matSuffix style="padding-left: 10%"> %</span>
     
-    <input type="submit" value="Calculate" >
-    <div>
-        <span>{{result}}</span>
+    </mat-form-field><br />
+    <mat-form-field style="text-align: left" fxFlexFill>
+    <mat-label>Loan term</mat-label>
+        <input class="calclulatorField" matInput type="number" [(ngModel)]="term" placeholder="25" name="term" autocomplete="off" style="text-align: right"> <span matSuffix style="padding-left: 10%">years</span>
+    </mat-form-field><br />
+    <button mat-button color="primary" type="submit" value="Calculate"  fxFlexFill>Calculate</button>
+    </mat-card>
+    <div *ngIf="result!=undefined">
+        <h3>Your mortgage repayments will be <span class="result">{{result}}</span> per month</h3>
     </div>
+    
 </form>

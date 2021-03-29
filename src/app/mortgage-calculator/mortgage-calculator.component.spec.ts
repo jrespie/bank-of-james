@@ -23,10 +23,12 @@ describe('MortgageCalculatorComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should add two numbers together', () => {
-    component.num1=2;
-    component.num2=3;
+  it('should calculate a correct mortage repayment value', () => {
+    component.housePrice=780000;
+    component.deposit=156000;
+    component.interestRate=4;
+    component.term=25;
     component.calculateResult();
-    expect(component.result).toEqual(5);
+    expect(component.result).toEqual(3293.7018834580863);
   })
 });

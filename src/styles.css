@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 /* Application-wide Styles */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
@@ -16,6 +18,22 @@ body {
 body, input[type="text"], button {
   color: #333;
   font-family: Cambria, Georgia, serif;
+}
+
+mat-form-field {
+
+}
+
+.result {
+  color: #369;
+  font-weight: bold;
+  font-size: 125%;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 /* everywhere else */
 * {
