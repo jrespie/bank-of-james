@@ -17,10 +17,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component'
+
+const routes: Routes = [
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'mortgagecalculator', component: MortgageCalculatorComponent },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+]
+
 @NgModule({
   declarations: [
     AppComponent,
-    MortgageCalculatorComponent
+    MortgageCalculatorComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +45,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatButtonModule,
 
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
