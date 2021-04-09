@@ -1,1 +1,53 @@
-<p>dashboard works!</p>
+<div fxLayout="row wrap">
+    <div fxFlex="100%">
+        <h1>Dashboard</h1>
+    </div>
+    </div>
+    <div>
+    <div fxFlexAlign="center">
+        <div fxLayout="row">
+            <a routerLink="/mortgagecalculator" class="dash-button" fxFlex = "45%">
+                <mat-card>
+                    <div>
+                        <mat-icon class="big-icon">calculate</mat-icon>
+                    </div
+                    ><div>
+                        Mortgage Calculator
+                    </div>
+                </mat-card>
+            </a>
+            <a class="dash-button disabled" fxFlex = "45%">
+                <mat-card>
+                    <div>
+                        <mat-icon class="big-icon">account_balance_wallet</mat-icon>
+                    </div>
+                    <div>
+                        Account Balances (Not yet implemented)
+                    </div>
+                </mat-card>
+            </a>
+        </div>
+        <div fxLayout="row">
+            <a class="dash-button disabled" fxFlex = "45%">
+                <mat-card>
+                    <div>
+                        <mat-icon class="big-icon">swap_horizontal_circle</mat-icon>
+                    </div>
+                    <div>
+                        Transfer Funds (Not yet implemented)
+                    </div>
+                </mat-card>
+            </a>
+            <a class="dash-button disabled" fxFlex = "45%">
+                <mat-card>
+                    <div>
+                        <mat-icon class="big-icon">contact_support</mat-icon>
+                    </div>
+                    <div>
+                        Contact Support (Not yet implemented)
+                    </div>
+                </mat-card>
+            </a>
+        </div>
+    </div>
+</div>
