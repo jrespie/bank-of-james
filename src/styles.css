@@ -3,7 +3,7 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 h1 {
-  color: #369;
+  color: #3f51b5;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
@@ -20,8 +20,24 @@ body, input[type="text"], button {
   font-family: Cambria, Georgia, serif;
 }
 
-mat-form-field {
+.dash-button {
+  margin: 2%;
+  text-align: center;
+  min-width: 250px;
+  text-decoration: none;
+}
 
+.dash-button:hover mat-card{
+  color: #3f51b5;
+}
+.dash-button:hover.disabled mat-card{
+  opacity: 0.3;
+  color: black;
+}
+
+.big-icon {
+  font-size: 200px;
+  margin-left: -190px;
 }
 
 .result {
