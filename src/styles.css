@@ -25,6 +25,7 @@ body, input[type="text"], button {
   text-align: center;
   min-width: 250px;
   text-decoration: none;
+  
 }
 
 .dash-button:hover mat-card{
@@ -38,6 +39,11 @@ body, input[type="text"], button {
 .big-icon {
   font-size: 200px;
   margin-left: -190px;
+}
+
+.nowrap {
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .result {
