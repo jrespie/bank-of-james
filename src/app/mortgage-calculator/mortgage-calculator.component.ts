@@ -15,6 +15,7 @@ export class MortgageCalculatorComponent implements OnInit {
   @Input() public term: number=25;
   public lowEquityMargin: number=0.75
   public result: string;
+  public interestOnlyResult: string;
 
   public ngOnInit(): void {
   }
@@ -53,6 +54,11 @@ export class MortgageCalculatorComponent implements OnInit {
   }
 
   public calculateResult(): void {
+    this.calculateRepayment();
+    this.calculateInterestOnly();
+  }
+
+  public calculateRepayment(): void {
     //mortgage calculation formula from
     //https://www.businessinsider.com/personal-finance/how-to-calculate-mortgage-payment
     const P = this.calculateLoanAmount();
@@ -61,6 +67,14 @@ export class MortgageCalculatorComponent implements OnInit {
 
     const rawResult = P*(i*(Math.pow(1+i,n)))/(Math.pow((1+i),n)-1);
     this.result = rawResult.toFixed(2);
+  }
+
+  public calculateInterestOnly(): void {
+    const P = this.calculateLoanAmount();
+    const i = this.calculateMonthlyInterestRate();
+
+    const rawResult = P*i;
+    this.interestOnlyResult = rawResult.toFixed(2);
   }
 
 }
