@@ -77,4 +77,8 @@ export class MortgageCalculatorComponent implements OnInit {
     this.interestOnlyResult = rawResult.toFixed(2);
   }
 
+  public returnTrue(): boolean {
+    return true;
+  }
+
 }
